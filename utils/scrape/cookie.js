@@ -23,7 +23,7 @@ export function loadCookies(CookieNameAlias='*', CookiePath='./storage/cookie.js
     if(CookieNameAlias == '*'){
       return JSON.parse(cookies);
     }
-    return cookieParser(JSON.parse(cookies)[CookieNameAlias]['cookies']);
+    return JSON.parse(cookies)[CookieNameAlias] && cookieParser(JSON.parse(cookies)[CookieNameAlias]['cookies']);
 }
 
 export function cookieParser(cookies){
